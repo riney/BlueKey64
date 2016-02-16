@@ -20,7 +20,7 @@ all: $(PRG)
 $(PRG):
 	$(ASSEMBLER_HOME)/$(ASSEMBLER) $(ASSEMBLER_OPTS) $(PRG).s -o $(PRG).bin
 	dd if=/dev/null of=$(PRG).bin bs=1 count=0 seek=$(CARTSIZE)
-	cp $(PRG).bin $(PRG)_fla.bin
+	cp $(PRG).bin $(PRG)_flash.bin
 	dd if=/dev/null of=$(PRG)_flash.bin bs=1 count=0 seek=$(FLASHSIZE)
 clean:
 	rm $(PRG).bin $(PRG)_flash.bin
